@@ -10,6 +10,7 @@ Cada nova coisa que eu aprender pode ser adicionada aqui, junto com exemplos e e
 1. [Introdução ao Flask](#introdução-ao-flask)  
 2. [Render Template](#render-template)
 3. [Estrutura de Rotas](#estrutura-de-rotas)
+4. [Links e `url_for`](#links-e-url_for)
 
 ---
 
@@ -21,7 +22,7 @@ Ele permite criar servidores, rotas, templates e APIs de forma rápida e simples
 Exemplo básico:
 
 ```python
-from flask import Flask, render_template
+from flask import Flask, url_for, render_template
 
 app = Flask(__name__)
 
@@ -73,4 +74,18 @@ No HTML(`index.html`):
 No Flask, uma rota é um caminho que o servidor responde.
 Cada rota é associada a uma função Python, que decide o que será retornado.
 `@app.route("/")` está associado a função `home()`e `@app.route("/sobre/")`está associado a função `sobre()`
+
+---
+
+## Links e `url_for`
+
+O `url_for`é a forma recomendada de criar links internos para suas rotas.
+Ele gera a URL dinâmicamente a partir do nome da função, ao invés de depender de um caminho fixo.
+
+### Por quê usar `url_for`?
+- **Dinâmico**: Se você mudar a rota no código, os links não quebram.
+- **Seguro**: Evita apontar para URLs erradas ou externas acidentalmente.
+- **Flexível**: Permite passar parâmetros de rota facilmente.
+
+---
 

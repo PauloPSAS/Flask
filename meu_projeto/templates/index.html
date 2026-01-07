@@ -8,7 +8,7 @@
 <body>
     <div>
         <h3>Estudo Flask</h3>
-        <h5>@campcodebrasil</h5>
+        <h5>@estudoflask</h5>
     </div>
     <div>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -16,8 +16,8 @@
         autem quasi aut eius omnis in repudiandae molestias inventore odio eaque,
         quas repellendus exercitationem!</p>
         
-        <a href="/nova/">link com a URL literal aponta pra URL e não para a função</a><br><br>
-        <a href="{{url_for('novapag')}}">link com url_for apontando para a função e não pra URL</a>
+        <a href="/sobre/">Link Sobre(sem url_for), aponta para a url.</a><br><br>
+        <a href="{{url_for('sobre')}}">Link Sobre(com url_for), aponta para a função.</a>
     </div>
 </body>
 </html>

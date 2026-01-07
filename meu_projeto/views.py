@@ -7,5 +7,5 @@ def home():
 
 
 @app.route("/sobre/")
-def novapag():
+def sobre():
     return "Página Sobre"
