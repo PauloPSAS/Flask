@@ -8,12 +8,7 @@ Cada nova coisa que eu aprender pode ser adicionada aqui, junto com exemplos e e
 ## Sumário
 
 1. [Introdução ao Flask](#introdução-ao-flask)  
-2. [Estrutura de Rotas](#estrutura-de-rotas)  
-3. [Links e `url_for`](#links-e-url_for)  
-4. [Ambientes Virtuais (.venv)](#ambientes-virtuais-venv)  
-5. [Logs do Servidor](#logs-do-servidor)  
-6. [Boas Práticas de Segurança](#boas-práticas-de-segurança)  
-7. [Aprendizados Adicionais](#aprendizados-adicionais)  
+2. [Render Template](#render-template)
 
 ---
 
@@ -21,3 +16,51 @@ Cada nova coisa que eu aprender pode ser adicionada aqui, junto com exemplos e e
 
 Flask é um micro-framework em Python para desenvolvimento web.  
 Ele permite criar servidores, rotas, templates e APIs de forma rápida e simples.
+
+Exemplo básico:
+
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+
+@app.route("/sobre/")
+def sobre():
+    return "página Sobre"
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+---
+
+## Render Template
+
+No Flask, usamos `render_template` para servir arquivos HTML completos ao invés de retornar apenas strings.
+
+```python
+@app.route("/")
+def home():
+    return render_template("index.html")
+```
+
+Por quê usar `render_template`:
+1. Flask procura o arquivo dentro de `templates/`.
+2. Permite separar o HTML do Python, isso mantém o código organizado.
+3. Permite passar variáveis dinâmicas para o template:
+```python
+@app.route("/user/<nome>/")
+def user(nome):
+    return render_template("index.html", nome=nome)
+```
+No HTML(`index.html`):
+```html
+<h1>Olá, {{ nome }}!</h1>
+```
+- O navegador verá algo como: `Olá, João`, substituindo a variável `nome`.

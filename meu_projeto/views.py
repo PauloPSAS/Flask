@@ -6,6 +6,6 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/contatos/")
+@app.route("/sobre/")
 def novapag():
-    return "Outra view!"
+    return "Página Sobre"
