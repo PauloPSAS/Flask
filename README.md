@@ -9,6 +9,7 @@ Cada nova coisa que eu aprender pode ser adicionada aqui, junto com exemplos e e
 
 1. [Introdução ao Flask](#introdução-ao-flask)  
 2. [Render Template](#render-template)
+3. [Estrutura de Rotas](#estrutura-de-rotas)
 
 ---
 
@@ -64,3 +65,12 @@ No HTML(`index.html`):
 <h1>Olá, {{ nome }}!</h1>
 ```
 - O navegador verá algo como: `Olá, João`, substituindo a variável `nome`.
+
+---
+
+## Estrutura de Rotas
+
+No Flask, uma rota é um caminho que o servidor responde.
+Cada rota é associada a uma função Python, que decide o que será retornado.
+`@app.route("/")` está associado a função `home()`e `@app.route("/sobre/")`está associado a função `sobre()`
+
