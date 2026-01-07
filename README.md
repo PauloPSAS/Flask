@@ -62,7 +62,7 @@ def user(nome):
 ```
 No HTML(`index.html`):
 ```html
-<h1>Olá, {{ nome }}!</h1>
+<h1>Olá, {{nome}}!</h1>
 ```
 - O navegador verá algo como: `Olá, João`, substituindo a variável `nome`.
 
